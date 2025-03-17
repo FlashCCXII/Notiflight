@@ -10,12 +10,12 @@ class FlightData:
 
 def find_cheapest_flight(data):
     if data is None or not data.get("data"):
-        print("No flight data")
+        #print("No flight data")
         return FlightData("N/A", "N/A", "N/A", "N/A", "N/A", "N/A")
 
     flights = data["data"]
     if not flights:
-        print("No flights found")
+        #print("No flights found")
         return FlightData("N/A", "N/A", "N/A", "N/A", "N/A", "N/A")
 
     first_flight = flights[0]
@@ -40,5 +40,5 @@ def find_cheapest_flight(data):
             num_stops = len(flight["itineraries"][0]["segments"]) - 1
             cheapest_flight = FlightData(lowest_price, departure, arrival, leaving, returning, num_stops)
 
-    print(f"The cheapest flight from {departure} to {arrival} is ${lowest_price}.")
+    #print(f"The cheapest flight from {departure} to {arrival} is ${lowest_price}.")
     return cheapest_flight
